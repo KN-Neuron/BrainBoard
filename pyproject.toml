@@ -25,6 +25,9 @@ black = "^24.0.0"
 flake8 = "^7.0.0"
 jupyter = "^1.1.1"
 mypy = "^1.8.0"
+types-pyyaml = "^6.0.12.20250915"
+pandas-stubs = "^3.0.0.260204"
+scipy-stubs = "^1.17.1.1"
 
 [build-system]
 requires = ["poetry-core"]
