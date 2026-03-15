@@ -19,6 +19,15 @@ class SpellerState:
         attrs = ", ".join(f"{k}={v!r}" for k, v in self.__dict__.items())
         return f"{self.__class__.__name__}({attrs})"
 
+    def back(self, _: Speller) -> None:
+        raise UnsupportedTransitionError("Current state does not support 'back'.")
+
+    def select(self, _: Speller) -> None:
+        raise UnsupportedTransitionError("Current state does not support 'select'.")
+
+    def move(self, _: Speller, _dir: Direction) -> None:
+        raise UnsupportedTransitionError("Current state does not support 'move'.")
+
 
 class UnsupportedTransitionError(Exception):
     pass

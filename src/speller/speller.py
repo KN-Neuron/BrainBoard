@@ -24,27 +24,15 @@ class Speller:
             self.on_letter_select = lambda letter: print(f"Selected letter: {letter}")
 
     def back(self) -> SpellerState:
-        try:
-            self.state.back(self)
-        except AttributeError:
-            raise UnsupportedTransitionError("Current state does not support 'back'.")
-
+        self.state.back(self)
         return self.state
 
     def select(self) -> SpellerState:
-        try:
-            self.state.select(self)
-        except AttributeError:
-            raise UnsupportedTransitionError("Current state does not support 'select'.")
-
+        self.state.select(self)
         return self.state
 
     def move(self, direction: Direction) -> SpellerState:
-        try:
-            self.state.move(self, direction)
-        except AttributeError:
-            raise UnsupportedTransitionError("Current state does not support 'move'.")
-
+        self.state.move(self, direction)
         return self.state
 
 
